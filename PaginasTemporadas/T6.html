@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <title>ES HOY</title>
+    <style>
+        /* Estilo para el contenedor del texto */
+        #typewriter {
+            font-family: 'Courier New', Courier, monospace; /* Fuente similar a una máquina de escribir */
+            color: #99a03c;
+            font-size: 24px;
+            white-space: pre-wrap; /* Preserva los espacios en blanco */
+            /* border-right: 2px solid #99a03c; Añade un cursor al final */
+            display: inline-block;
+            overflow: hidden; /* Oculta el texto que aún no ha aparecido */
+            /* position: relative; Necesario para el cursor */
+        }
+
+        /* Efecto de parpadeo para el cursor */
+        @keyframes blink {
+            0% { border-color:#99a03c; }
+            50% { border-color: #18191a; }
+            100% { border-color: #99a03c; }
+        }
+
+        /* Aplica el parpadeo al cursor */
+        #typewriter {
+            animation: blink 0.7s infinite;
+        }
+
+        /* Ocultar el video inicialmente */
+        #gifContainer, #audioContainer, #linkContainer {
+            display: none;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="typewriter"></div><span id="cursor"></span>
+
+    <!-- Contenedor del video -->
+    <div id="gifContainer">
+        <img id="gifImage" src="./imagenes/confetti-celebrate.gif" alt="GIF animado">
+    </div>
+    <!-- Contenedor del audio -->
+
+    <div id="audioContainer">
+        <audio id="myAudio" loop>
+            <source src="./imagenes/Confetti Celebration.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- Contenedor del enlace -->
+    <div class="href" id="linkContainer">
+        <a href="./T7.html">siguiente...</a>
+    </div>
+
+    <script>
+        // Texto que se mostrará
+        const text = `Ahora quiero que te prepares, porque la página siguiente es en lo que estuve trabajando con los videos que te pedi, es una idea que robé de un tik tok, pero me gusto tanto que senti que podia hacer algo asi para vos, asi que ahora preparate, porque vas a ver algo que a mi personalmente me encantó hacer, y espero que eso se transmita.
+        `;
+
+        // Contenedor donde se mostrará el texto
+        const typewriterElement = document.getElementById('typewriter');
+        const gifContainer = document.getElementById('gifContainer');
+        const gifElement = document.getElementById('gifImage');
+        const audioContainer = document.getElementById('audioContainer');
+        const audioElement = document.getElementById('myAudio');
+
+        let index = 0;
+
+        // Función para escribir el texto
+        function type() {
+            if (index < text.length) {
+                const currentChar = text.charAt(index);
+                if (currentChar === '|') {
+                    // Mostrar el GIF y reproducir audio durante la pausa
+                    gifContainer.style.display = 'block';
+                    audioContainer.style.display = 'block';
+                    audioElement.play();
+                    setTimeout(() => {
+                        gifContainer.style.display = 'none'; // Ocultar el GIF después de la pausa
+                        audioContainer.style.display = 'none'; // Ocultar el audio después de la pausa
+                        audioElement.pause();
+                        audioElement.currentTime = 0; // Reiniciar el audio
+                        index++;
+                        type();
+                    }, 4369); // Pausa de 3 segundos para mostrar el GIF y reproducir audio
+                } else {
+                    typewriterElement.innerHTML += currentChar;
+                    index++;
+                    setTimeout(type, 100); // Velocidad de escritura
+                }
+            } else {
+                // Mostrar el enlace cuando termine de escribir
+                linkContainer.style.display = 'block';
+            }
+        }
+
+        // Iniciar la escritura
+        type();
+    </script>
+
+<footer>
+    <div>
+        <p class="teamo">♥♥♥♥♥♥♥♥♥♥♥♥♥♥ TE AMO ♥♥♥♥♥♥♥♥♥♥♥♥♥♥</p>
+</div>
+</footer>
+</body>
+</html>

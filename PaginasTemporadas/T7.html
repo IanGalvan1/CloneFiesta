@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <title>ES HOY</title>
+    <style>
+        /* Estilo para el contenedor del texto */
+        #typewriter {
+            font-family: 'Courier New', Courier, monospace; /* Fuente similar a una máquina de escribir */
+            color: #99a03c;
+            font-size: 24px;
+            white-space: pre-wrap; /* Preserva los espacios en blanco */
+            /* border-right: 2px solid #99a03c; Añade un cursor al final */
+            display: inline-block;
+            overflow: hidden; /* Oculta el texto que aún no ha aparecido */
+            /* position: relative; Necesario para el cursor */
+        }
+
+        /* Efecto de parpadeo para el cursor */
+        @keyframes blink {
+            0% { border-color:#99a03c; }
+            50% { border-color: #18191a; }
+            100% { border-color: #99a03c; }
+        }
+
+        /* Aplica el parpadeo al cursor */
+        #typewriter {
+            animation: blink 0.7s infinite;
+        }
+
+        /* Ocultar el video inicialmente */
+        #gifContainer, #audioContainer, #linkContainer {
+            display: none;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RLW1VkbVcng?rel=0" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+<div id="typewriter"></div><span id="cursor"></span>
+
+    <!-- Contenedor del video -->
+    <div id="gifContainer">
+        <img id="gifImage" src="./imagenes/confetti-celebrate.gif" alt="GIF animado">
+    </div>
+    <!-- Contenedor del audio -->
+
+    <div id="audioContainer">
+        <audio id="myAudio" loop>
+            <source src="./imagenes/Confetti Celebration.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- Contenedor del enlace -->
+    <div class="href" id="linkContainer">
+        <a href="./T8.html">siguiente...</a>
+    </div>
+
+    <!-- <div id="videoContainer">
+        <video id="myVideo" width="1080" height="720" controls>
+            <source src="../imagenes/Carta para Maylén .mp4" type="video/mp4">
+        </video>
+    </div> -->
+ 
+    <script>
+        // Texto que se mostrará
+        const text = `
+        
+        Espero que esto te haya gustado, realmente me hace muy feliz verte tan feliz, compartir tanto con vos, ser tu pareja.
+        Gracias may por dejarme compartir todo esto con vos, y espero que estes teniendo un hermoso dia.
+        Feliz Cumpleaños mi amor.`;
+
+
+        // Contenedor donde se mostrará el texto
+        const typewriterElement = document.getElementById('typewriter');
+        const gifContainer = document.getElementById('gifContainer');
+        const gifElement = document.getElementById('gifImage');
+        const audioContainer = document.getElementById('audioContainer');
+        const audioElement = document.getElementById('myAudio');
+        const videoElement = document.getElementById('myVideo');
+
+        let index = 0;
+
+        // Función para escribir el texto
+        function type() {
+            if (index < text.length) {
+            const currentChar = text.charAt(index);
+
+                    if (currentChar === '|') {
+                        // Ocultar el texto y mostrar el video
+                        typewriterElement.style.display = 'none';
+                        videoContainer.style.display = 'block';
+                        videoElement.play();
+
+                        setTimeout(() => {
+                            // Después de la pausa, ocultar el video y continuar con el texto
+                            videoContainer.style.display = 'none';
+                            videoElement.pause();
+                            videoElement.currentTime = 0; // Reiniciar el video
+                            typewriterElement.style.display = 'inline-block';
+                            index++;
+                            type();
+                        }, 250000); // Pausa de 5 segundos para mostrar el video
+                    } else {
+                        typewriterElement.innerHTML += currentChar;
+                        index++;
+                        setTimeout(type, 100); // Velocidad de escritura
+                        }
+                    }
+            }
+
+        // Iniciar la escritura
+        type();
+    </script>
+
+<footer>
+    <div>
+        <p class="teamo">♥♥♥♥♥♥♥♥♥♥♥♥♥♥ TE AMO ♥♥♥♥♥♥♥♥♥♥♥♥♥♥</p>
+</div>
+</footer>
+</body>
+</html>

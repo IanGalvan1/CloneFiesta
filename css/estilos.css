@@ -4,153 +4,25 @@
 }
 
 body{
-    background-color: #86E5FF;
+    background-color: #18191a;
 }
 
-.head{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: #0081C9;
+body{
+    margin: 10%;
 }
 
-.head__logo{
-    grid-column: 1/2;
-}
-
-.head__paginas{
-    grid-column: 5/8;
-}
-
-.head__logo{
-    margin: 5%;
-}
-
-.head__logo img{
-    max-width: 500px;
-    max-height: 50px;
-}
-
-.head__paginas{
-    display: flex;
-    flex-direction: row;
-}
-.head__paginas p{
-    margin: 2%;
-    font-size: 20px;
-}
-
-.letras{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #FFC93C;
-    margin-left: 10%;
-    margin-top: 2%;
-    padding: 2%;
-    width: 80%;
-}
-
-.letras__titulo{
+.teamo{
+    margin-top: 10%;
     text-align: center;
+    color: #99a03c;
 }
 
-.letras__lista{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.href{
+    text-align: right;
+    font-size: 40px;
 }
-
-.extra{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.extra__mapa{
-    margin: 2%;
-    padding: 2%;
-}
-
-.extra__texto{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #5BC0F8;
-    margin:2%;
-    padding: 2%;
-}
-
-.algo{
-    background: #5BC0F8;
-}
-
-.algo h2{
-    text-align: center;
-}
-
-.imagen {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 5px;
-    justify-items: center;
-    padding-top: 10px;
-    margin: 2%;
-}
-
-.imagen__foto{
-    height: 90%;
-    width: 80%;
-    padding: 10px;
-    transition: all 1s;
-}
-
-.imagen__foto:hover{
-    transform: scale(1.2);
-}
-
-.carousell{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 2%;
-}
-
-.carousell__texto{
-    text-align: center;
-    background-color: #5BC0F8;
-    padding: 2%;
-}
-
-footer {
-    background: #FFC93C;
-    display: flex;
-    justify-content: center;
-}
-
-.contactanos {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    max-width: 100%;
-    max-height: auto;
-}
-.contactanos__titulo {
-    margin: 0;
-    color: black;
-    font-size: 24px;
-    text-align: center;
-}
-.contactanos__redes {
-    text-align: center;
-    display: inline;
-    margin: auto 2%;
-}
-.contactanos__redes ul {
-    list-style: none;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-.contactanos__redes ul li {
-    margin: auto 80px;
+a{
+    text-decoration: none;
+    color:#99a03c;
+    background-color:#34351f ;
 }
